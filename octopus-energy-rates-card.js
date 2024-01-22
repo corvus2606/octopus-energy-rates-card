@@ -286,7 +286,7 @@ class OctopusEnergyRatesCard extends HTMLElement {
             var valueToDisplay = key.value_inc_vat * multiplier;
             // Apply bold styling if the current time is a target time
             var boldStyle = isCurrentTime ? "current " : "";
-            boldStyle = isTargetTime ? 'time_highlight' : '';
+            boldStyle = isTargetTime ? boldStyle + "time_highlight" : boldStyle + "";
             if (cheapest && (valueToDisplay == cheapest_rate && cheapest_rate > 0)) colour = colours[5];
             else if (cheapest && (valueToDisplay == cheapest_rate && cheapest_rate <= 0)) colour = colours[6];
             else if (valueToDisplay > highlimit) colour = colours[3]; //red (import) / green (export)
