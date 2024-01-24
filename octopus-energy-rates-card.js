@@ -165,8 +165,8 @@ class OctopusEnergyRatesCard extends HTMLElement {
         // Get Limit entity values
         const limitEntity = config.limitEntity;
         const limitEntityState = hass.states[limitEntity];
-        const limitHighMult = config.HighLimitMultiplier;
-        const limitMedMult = config.MediumLimitMultiplier;
+        const limitHighMult = config.highLimitMultiplier;
+        const limitMedMult = config.mediumLimitMultiplier;
 
         if(!(limitEntity == null)){
             const limitAve = parseFloat(limitEntityState.state);
@@ -391,8 +391,8 @@ class OctopusEnergyRatesCard extends HTMLElement {
             highlimit: 30,
             // Entity to use for dynamic limits, above are ignored if limitEntity is set. 
             limitEntity: null,
-            HighLimitMultiplier: 1.1,
-            MediumLimitMultiplier: 0.8,
+            highLimitMultiplier: 1.1,
+            mediumLimitMultiplier: 0.8,
             // Controls the rounding of the units of the rate
             roundUnits: 2,
             // The unit string to show if units are shown after each rate
